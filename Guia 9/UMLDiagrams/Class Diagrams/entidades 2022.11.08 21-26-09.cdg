@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="entidades">
+  <ClassDiagramComponents>
+    <Class name="Equipo" package="entidades" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="team" type="List&lt;Jugadores&gt;" visibility="private"/>
+        <Field name="presupuesto" type="double" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="List&lt;Jugadores&gt;" name="team"/>
+          <Argument type="double" name="presupuesto"/>
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getTeam" returnType="List&lt;Jugadores&gt;" visibility="public"/>
+        <Method name="setTeam" returnType="void" visibility="public">
+          <Argument type="List&lt;Jugadores&gt;" name="team"/>
+        </Method>
+        <Method name="getPresupuesto" returnType="double" visibility="public"/>
+        <Method name="setPresupuesto" returnType="void" visibility="public">
+          <Argument type="double" name="presupuesto"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Jugadores" package="entidades" visibility="public" xPosition="496.0" yPosition="38.0">
+      <Fields>
+        <Field name="Nombre" type="String" visibility="private"/>
+        <Field name="Apellido" type="String" visibility="private"/>
+        <Field name="num" type="int" visibility="private"/>
+        <Field name="pos" type="Posicion" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="Nombre"/>
+          <Argument type="String" name="Apellido"/>
+          <Argument type="int" name="num"/>
+          <Argument type="Posicion" name="pos"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="Nombre"/>
+        </Method>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="Apellido"/>
+        </Method>
+        <Method name="getNum" returnType="int" visibility="public"/>
+        <Method name="setNum" returnType="void" visibility="public">
+          <Argument type="int" name="num"/>
+        </Method>
+        <Method name="getPos" returnType="Posicion" visibility="public"/>
+        <Method name="setPos" returnType="void" visibility="public">
+          <Argument type="Posicion" name="pos"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Enum name="Posicion" package="entidades" visibility="public" xPosition="163.0" yPosition="385.0">
+      <Literals>
+        <Literal name="DELANTERO"/>
+        <Literal name="DEFENSOR"/>
+        <Literal name="ARQUERO"/>
+        <Literal name="MEDIO"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="entidades.Equipo" target="entidades.Jugadores" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="team" source="entidades.Equipo" target="entidades.Jugadores" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Jugadores&gt;"/>
+    <UseRelation source="entidades.Jugadores" target="entidades.Posicion" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pos" source="entidades.Jugadores" target="entidades.Posicion" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

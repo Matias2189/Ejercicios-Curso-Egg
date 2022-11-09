@@ -11,6 +11,9 @@ public class Servicios {
 
     Scanner leer = new Scanner(System.in).useDelimiter("\n");
     ArrayList<Alumnos> aL = new ArrayList();
+     ArrayList<Alumnos> aLArg = new ArrayList();
+        ArrayList<Alumnos> aLChi = new ArrayList();
+        ArrayList<Alumnos> aLVen = new ArrayList();
 
     public void menu() {
 
@@ -26,8 +29,8 @@ public class Servicios {
             System.out.println("5) Ordenar alfabéticamente los apellidos en forma ascendente");
             System.out.println("6) Ordenar alfabéticamente los nombres en forma descendente");
             System.out.println("7) Calcular edad");
-            System.out.println("8) ");
-            System.out.println("9) ");
+            System.out.println("8) Lista de alumnos por Nacionalidad");
+            System.out.println("9) Reporte Final");
             System.out.println("0) Salir");
 
             opcion = leer.nextInt();
@@ -54,10 +57,10 @@ public class Servicios {
                     mostrarEdad();
                     break;
                 case 8:
-
+                    alumnosPorNacionalidad();
                     break;
                 case 9:
-
+                    reporteFinal();
                     break;
                 case 0:
 
@@ -249,7 +252,7 @@ public class Servicios {
         a.setNacimiento(nac);
 
         aL.add(a);
-        
+
         Alumnos b = new Alumnos();
 
         Date nac1 = new Date(1988 - 1900, 3 - 1, 21);
@@ -261,76 +264,78 @@ public class Servicios {
         aL.add(b);
 
         Alumnos c = new Alumnos();
-        
+
         Date nac2 = new Date(1987 - 1900, 3 - 1, 21);
         c.setNombre("Nicolas");
         c.setApellido("Suarez");
         c.setNacionalidad("Argentina");
         c.setNacimiento(nac2);
         aL.add(c);
-        
+
         Alumnos d = new Alumnos();
-        
+
         Date nac3 = new Date(1986 - 1900, 3 - 1, 21);
         d.setNombre("Pedro");
         d.setApellido("Gomez");
         d.setNacionalidad("Chilena");
         d.setNacimiento(nac3);
         aL.add(d);
-        
+
         Alumnos e = new Alumnos();
-        
+
         Date nac4 = new Date(1985 - 1900, 3 - 1, 21);
         e.setNombre("Guille");
         e.setApellido("Moyano");
         e.setNacionalidad("Chilena");
         e.setNacimiento(nac4);
         aL.add(e);
-        
+
         Alumnos f = new Alumnos();
-        
+
         Date nac5 = new Date(1984 - 1900, 3 - 1, 21);
         f.setNombre("Gonza");
         f.setApellido("Barraza");
         f.setNacionalidad("Chilena");
         f.setNacimiento(nac5);
         aL.add(f);
-        
+
         Alumnos g = new Alumnos();
-        
+
         Date nac6 = new Date(1983 - 1900, 3 - 1, 21);
         g.setNombre("Pedro");
         g.setApellido("Chavez");
         g.setNacionalidad("Venezolana");
         g.setNacimiento(nac6);
         aL.add(g);
-        
+
         Alumnos h = new Alumnos();
-        
+
         Date nac7 = new Date(1982 - 1900, 3 - 1, 21);
         h.setNombre("Agustina");
         h.setApellido("Perez");
         h.setNacionalidad("Venezolana");
         h.setNacimiento(nac7);
         aL.add(h);
-        
+
         Alumnos i = new Alumnos();
-        
+
         Date nac8 = new Date(1992 - 1900, 3 - 1, 21);
         i.setNombre("Yuliana");
         i.setApellido("Lopez");
         i.setNacionalidad("Argentina");
         i.setNacimiento(nac8);
         aL.add(i);
-        
+
         Alumnos j = new Alumnos();
-        
+
         Date nac9 = new Date(1980 - 1900, 3 - 1, 21);
         j.setNombre("Leonor");
         j.setApellido("Sappia");
         j.setNacionalidad("Venezolana");
         j.setNacimiento(nac9);
         aL.add(j);
+        
+        
     }
 
     public void ordenarAsc() {
@@ -373,5 +378,97 @@ public class Servicios {
         if (edad == 0) {
             System.out.println("No hay alumnos con ese nombre");
         }
+    }
+
+    public void alumnosPorNacionalidad() {
+       
+
+        for (Alumnos aux : aL) {
+            if (aux.getNacionalidad().equalsIgnoreCase("Argentina")) {
+                aLArg.add(aux);
+            } else if (aux.getNacionalidad().equalsIgnoreCase("Chilena")) {
+                aLChi.add(aux);
+            } else if (aux.getNacionalidad().equalsIgnoreCase("Venezolana")) {
+                aLVen.add(aux);
+            }
+        }
+
+        int opcion;
+
+        do {
+            System.out.println("\t.:Menu:.");
+            System.out.println("Seleccione la nacionalidad de los alumnos a consultar: ");
+            System.out.println("1 - Argentina");
+            System.out.println("2 - Chilena");
+            System.out.println("3 - Venezolana");
+            System.out.println("4 - Salir");
+            System.out.println("Elija su opcion:");
+            opcion = leer.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    for (Alumnos aux : aLArg) {
+                        System.out.println(aux);
+                    }
+                    break;
+                case 2:
+                    for (Alumnos aux : aLChi) {
+                        System.out.println(aux);
+                    }
+                    break;
+                case 3:
+                    for (Alumnos aux : aLVen) {
+                        System.out.println(aux);
+                    }
+                    break;
+                case 4:
+                    System.out.println("Hasta Luego...");
+                    break;
+                default:
+                    System.out.println("Esa no es una opcion valida, vuelva a intentar...");
+                    break;
+            }
+        } while (!(opcion == 4));
+
+    }
+
+    public void reporteFinal() {
+        //alumnos > 25
+        //cuantos alumnos apellido comienzan con  L o P
+        //Cuantos alumnos hay de nacionalidad ARGENTINA – CHILENA – VENEZOLANA.
+        int edad = 0;
+        int cont = 0;
+        int contA = 0;
+        int contNA=0,contNC=0,contNV=0;
+        
+        Date fechaActual = new Date();
+        
+        for (Alumnos aux : aL) {
+            edad = fechaActual.getYear() - aux.getNacimiento().getYear();
+            if (edad > 25) {
+                cont++;
+            }
+            if (aux.getApellido().startsWith("L") || aux.getApellido().startsWith("P")) {
+              contA++;  
+            }        
+        }
+        
+        
+        for (Alumnos aux : aL) {
+            if (aux.getNacionalidad().equalsIgnoreCase("Argentina")) {
+                contNA++;
+            }else if (aux.getNacionalidad().equalsIgnoreCase("Chilena")) {
+                contNC++;
+            }else if (aux.getNacionalidad().equalsIgnoreCase("Venezolana")) {
+                contNV++;
+            }
+        }
+        
+        
+        System.out.println("Hay "+ cont +" alumnos mayores de 25 años");
+        System.out.println("Hay "+ contA +" cuyo apellido comienzan con L o P");
+        System.out.println("Hay "+ contNA +" alumnos cuya nacinoalidad es Argentina");
+        System.out.println("Hay "+ contNC +" alumnos cuya nacinoalidad es Chilena");
+        System.out.println("Hay "+ contNV +" alumnos cuya nacinoalidad es Venezolana");
     }
 }

@@ -44,6 +44,19 @@ public class Servicios {
                     System.out.println("No se encontro el producto");
                 }
             }
+         /*   Esta forma reemplazaria el uso del for para ver si esta el 
+            producto y modificar el precio.
+            
+            System.out.println("ingrese el nombre del prodcucto a modicar precio");
+        String nombre = leer.next().toLowerCase();
+        if (productos.containsKey(nombre)) {
+            System.out.println("ingresar el nuevo precio");
+            productos.replace(nombre, leer.nextInt()); //metodo para sobreescribir
+        } else {
+            System.out.println("ese producto no esta en la lista");
+
+        }*/
+
         }
     }
 

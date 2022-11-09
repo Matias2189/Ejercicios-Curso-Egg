@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="entidades">
+  <ClassDiagramComponents>
+    <Class name="DNI" package="entidades" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="serie" type="char" visibility="private"/>
+        <Field name="doc" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="char" name="serie"/>
+          <Argument type="int" name="doc"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getSerie" returnType="char" visibility="public"/>
+        <Method name="setSerie" returnType="void" visibility="public">
+          <Argument type="char" name="serie"/>
+        </Method>
+        <Method name="getDoc" returnType="int" visibility="public"/>
+        <Method name="setDoc" returnType="void" visibility="public">
+          <Argument type="int" name="doc"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Persona" package="entidades" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="Nombre" type="String" visibility="private"/>
+        <Field name="Apellido" type="String" visibility="private"/>
+        <Field name="doc" type="DNI" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="Nombre"/>
+          <Argument type="String" name="Apellido"/>
+          <Argument type="DNI" name="doc"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="Nombre"/>
+        </Method>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="Apellido"/>
+        </Method>
+        <Method name="getDoc" returnType="DNI" visibility="public"/>
+        <Method name="setDoc" returnType="void" visibility="public">
+          <Argument type="DNI" name="doc"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="doc" source="entidades.Persona" target="entidades.DNI" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="entidades.Persona" target="entidades.DNI" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
