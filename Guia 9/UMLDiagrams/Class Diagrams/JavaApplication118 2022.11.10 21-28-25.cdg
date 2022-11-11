@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="JavaApplication118">
+  <ClassDiagramComponents>
+    <Class name="Juego" package="Entidades" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="jugadores" type="ArrayList&lt;Jugador&gt;" visibility="private"/>
+        <Field name="revolver" type="Revolver" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="ArrayList&lt;Jugador&gt;" name="jugadores"/>
+          <Argument type="Revolver" name="revolver"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getJugadores" returnType="ArrayList&lt;Jugador&gt;" visibility="public"/>
+        <Method name="setJugadores" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Jugador&gt;" name="jugadores"/>
+        </Method>
+        <Method name="getRevolver" returnType="Revolver" visibility="public"/>
+        <Method name="setRevolver" returnType="void" visibility="public">
+          <Argument type="Revolver" name="revolver"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Jugador" package="Entidades" visibility="public" xPosition="213.0" yPosition="344.0">
+      <Fields>
+        <Field name="id" type="Integer" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="mojado" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="boolean" name="mojado"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="Integer" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="isMojado" returnType="boolean" visibility="public"/>
+        <Method name="setMojado" returnType="void" visibility="public">
+          <Argument type="boolean" name="mojado"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Revolver" package="Entidades" visibility="public" xPosition="499.0" yPosition="20.0">
+      <Fields>
+        <Field name="tambor" type="Integer" visibility="private"/>
+        <Field name="agua" type="Integer" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="agua"/>
+          <Argument type="Integer" name="disparo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getTambor" returnType="Integer[]" visibility="public"/>
+        <Method name="setTambor" returnType="void" visibility="public">
+          <Argument type="Integer[]" name="tambor"/>
+        </Method>
+        <Method name="getAgua" returnType="Integer" visibility="public"/>
+        <Method name="setAgua" returnType="void" visibility="public">
+          <Argument type="Integer" name="agua"/>
+        </Method>
+        <Method name="getDisparo" returnType="Integer" visibility="public"/>
+        <Method name="setDisparo" returnType="void" visibility="public">
+          <Argument type="Integer" name="disparo"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="JavaApplication118" package="javaapplication118" visibility="public" xPosition="821.0" yPosition="31.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="JuegoServicio" package="Servicio" visibility="public" xPosition="993.0" yPosition="216.0">
+      <Fields>
+        <Field name="leer" type="Scanner" visibility="package"/>
+        <Field name="r" type="Revolver" visibility="package"/>
+        <Field name="jugadores" type="ArrayList&lt;Jugador&gt;" visibility="package"/>
+        <Field name="cont" type="int" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="llenarRevolver" returnType="void" visibility="public"/>
+        <Method name="mojar" returnType="boolean" visibility="public"/>
+        <Method name="siguienteChorro" returnType="void" visibility="public"/>
+        <Method name="alString" returnType="void" visibility="public"/>
+        <Method name="empezar" returnType="void" visibility="public"/>
+        <Method name="disparo" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="revolver" source="Entidades.Juego" target="Entidades.Revolver" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="r" source="Servicio.JuegoServicio" target="Entidades.Revolver" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Entidades.Juego" target="Entidades.Jugador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Entidades.Juego" target="Entidades.Revolver" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="jugadores" source="Servicio.JuegoServicio" target="Entidades.Jugador" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Jugador&gt;"/>
+    <HasRelation name="jugadores" source="Entidades.Juego" target="Entidades.Jugador" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Jugador&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

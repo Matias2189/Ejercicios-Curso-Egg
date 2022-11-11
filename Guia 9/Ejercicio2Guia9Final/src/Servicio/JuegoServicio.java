@@ -16,6 +16,7 @@ import Entidades.Jugador;
 import Entidades.Revolver;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.TreeSet;
@@ -24,6 +25,7 @@ public class JuegoServicio {
 
     Scanner leer = new Scanner(System.in).useDelimiter("\n");
     Revolver r = new Revolver();
+    ArrayList<Jugador> jugadores = new ArrayList();
 
     public void llenarRevolver() {
         r.setAgua((int) (Math.random() * 10));
@@ -34,11 +36,11 @@ public class JuegoServicio {
     }
 
     public boolean mojar() {
-       
+
         boolean mojado = false;
 
         if (r.getAgua() == r.getDisparo()) {
-            
+
             mojado = true;
         }
 
@@ -48,11 +50,11 @@ public class JuegoServicio {
     public void siguienteChorro() {
 
         System.out.println(r.getDisparo());
-            if (r.getDisparo() == 9) {
-                r.setDisparo(0);
-            } else {
-                r.setDisparo(r.getDisparo() + 1);
-            }
+        if (r.getDisparo() == 9) {
+            r.setDisparo(0);
+        } else {
+            r.setDisparo(r.getDisparo() + 1);
+        }
     }
 
     public void alString() {
@@ -61,7 +63,6 @@ public class JuegoServicio {
 
     public void empezar() {
 
-        ArrayList<Jugador> jugadores = new ArrayList();
         int cantidad = 0;
         int cont = 0;
         String unidos;
@@ -90,25 +91,67 @@ public class JuegoServicio {
             System.out.println(var);
         }
     }
+    int cont = 0, contar = 0;
 
     public boolean disparo() {
 
-        boolean mojado =false;
+        boolean mojado = false;
         do {
             mojar();
             siguienteChorro();
-        } while (mojar() == false);
+            /*for (int i = 0; i < jugadores.size()-1; i++) {
+            if (contar>jugadores.size()-1){
+                    contar =0;
+                }
+                
+                System.out.println(jugadores.get(contar).getNombre());
+                contar++;
+                break;
+        }*/
+            // 
+            if (contar > jugadores.size() - 1) {
+                contar = 0;
+            }
+            System.out.println(jugadores.get(contar).getNombre());
+            contar++;
+        } while (!mojar());
 
-        if (mojar()== true){
-            mojado= true;
+        if (contar > jugadores.size() - 1) {
+            contar = 0;
+        }
+        jugadores.get(contar).setMojado(true);
+        // if (mojar() ) {
+        mojado = true;
+        if (jugadores.get(contar).isMojado()) {
             System.out.println("-------------------------------------");
             System.out.println("Te cagaste en los pantalones!!!!");
+            System.out.println(jugadores.get(contar).getNombre());
             System.out.println("-------------------------------------");
         }
-        
+
+        //}
         return mojado;
     }
 
+//    public void corchazo() {
+//        
+//        
+//         Iterator <Jugador> it = jugadores.iterator();
+//         
+//         while (it.hasNext()){
+//             if (it.next().getId().g== false){
+//                 cont++;
+//                 if (cont == jugadores.size()){
+//                     cont = 0;
+//                 }
+//             }
+//         }
+//         
+//         
+//         System.out.println(jugadores.get(cont).getNombre() + " Se cagó encima ");
+//       
+//
+//    }
 }
 
 /*

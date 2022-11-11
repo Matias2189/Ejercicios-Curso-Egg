@@ -21,9 +21,10 @@ public class RuletaDeAgua {
     public static void main(String[] args) {
         
         JuegoServicio js = new JuegoServicio();
+        Jugador j = new Jugador();
         js.llenarRevolver();
         js.empezar();
-        js.disparo();
+        js.disparo(j);
         
     
         
