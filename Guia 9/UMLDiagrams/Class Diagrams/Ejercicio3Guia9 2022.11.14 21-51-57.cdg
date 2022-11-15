@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ejercicio3Guia9">
+  <ClassDiagramComponents>
+    <Class name="Ejercicio3Guia9" package="ejercicio3guia9" visibility="public" xPosition="98.0" yPosition="128.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Baraja" package="entidad" visibility="public" xPosition="98.0" yPosition="479.0">
+      <Fields>
+        <Field name="Baraja" type="HashMap&lt;Integer, Carta&gt;" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="HashMap&lt;Integer, Carta&gt;" name="Baraja"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getBaraja" returnType="HashMap&lt;Integer, Carta&gt;" visibility="public"/>
+        <Method name="setBaraja" returnType="void" visibility="public">
+          <Argument type="Integer" name="num"/>
+          <Argument type="Carta" name="c1"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Carta" package="entidad" visibility="public" xPosition="453.0" yPosition="91.0">
+      <Fields>
+        <Field name="numero" type="Integer" visibility="private"/>
+        <Field name="palo" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="numero"/>
+          <Argument type="String" name="palo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNumero" returnType="Integer" visibility="public"/>
+        <Method name="setNumero" returnType="void" visibility="public">
+          <Argument type="Integer" name="numero"/>
+        </Method>
+        <Method name="getPalo" returnType="String" visibility="public"/>
+        <Method name="setPalo" returnType="void" visibility="public">
+          <Argument type="String" name="palo"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Servicios" package="servicio" visibility="public" xPosition="896.0" yPosition="357.0">
+      <Fields>
+        <Field name="leer" type="Scanner" visibility="package"/>
+        <Field name="BarajeitorChiquito" type="ArrayList&lt;Carta&gt;" visibility="package"/>
+        <Field name="BarajaBorrada" type="ArrayList&lt;Carta&gt;" visibility="package"/>
+        <Field name="b1" type="Baraja" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearBaraja" returnType="void" visibility="public"/>
+        <Method name="barajar" returnType="void" visibility="public"/>
+        <Method name="siguienteCarta" returnType="void" visibility="public"/>
+        <Method name="cartasDisponibles" returnType="void" visibility="public"/>
+        <Method name="darCartas" returnType="void" visibility="public"/>
+        <Method name="cartasMonton" returnType="void" visibility="public"/>
+        <Method name="mostrarBaraja" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="entidad.Baraja" target="entidad.Carta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="Baraja" source="entidad.Baraja" target="entidad.Carta" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="HashMap&lt;Integer, Carta&gt;"/>
+    <HasRelation name="BarajaBorrada" source="servicio.Servicios" target="entidad.Carta" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Carta&gt;"/>
+    <HasRelation name="b1" source="servicio.Servicios" target="entidad.Baraja" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="BarajeitorChiquito" source="servicio.Servicios" target="entidad.Carta" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Carta&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
