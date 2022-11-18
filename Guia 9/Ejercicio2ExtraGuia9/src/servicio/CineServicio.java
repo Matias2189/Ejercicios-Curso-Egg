@@ -35,9 +35,7 @@ public class CineServicio {
     int cont = 0;
 
     public void abrirSala() {
-        String letra = "";
-        String random = "";
-        String numero = "";
+       
 
         System.out.println("El cine abrió y está asi de lleno: ");
         System.out.println("");
@@ -98,48 +96,66 @@ public class CineServicio {
         System.out.println("Ingrese fila: ");
         int fila = leer.nextInt();
         System.out.println("Ingrese columna: ");
-        String columna = leer.next();
+        String columna = leer.next().toUpperCase();
         if (columna.equalsIgnoreCase("A")) {
             if (Sala[fila-1][0].contains("X")) {
                 System.out.println("El lugar esta ocupado, mira bien");
+                System.out.println("Elija un asiento LIBRE!!!");
+                modificarSala();
             }else{
-                Sala[fila-1][0] += "X| "; 
+                Sala[fila-1][0] = fila+columna+"X| ";  
+                cont++;
             }
             
         }
         if (columna.equalsIgnoreCase("B")) {
              if (Sala[fila-1][1].contains("X")) {
                 System.out.println("El lugar esta ocupado, mira bien");
+          System.out.println("Elija un asiento LIBRE!!!");
+                modificarSala();
             }else{
-                Sala[fila-1][1] += "X| "; 
+                Sala[fila-1][1] = fila+columna+"X| "; 
+                cont++;
             }
         }
         if (columna.equalsIgnoreCase("C")) {
              if (Sala[fila-1][2].contains("X")) {
                 System.out.println("El lugar esta ocupado, mira bien");
+                System.out.println("Elija un asiento LIBRE!!!");
+                modificarSala();
             }else{
-                Sala[fila-1][2] += "X| "; 
+                Sala[fila-1][2] = fila+columna+"X| "; 
+                cont++;
             }
         }
         if (columna.equalsIgnoreCase("D")) {
              if (Sala[fila-1][3].contains("X")) {
                 System.out.println("El lugar esta ocupado, mira bien");
+                System.out.println("Elija un asiento LIBRE!!!");
+                modificarSala();
             }else{
-                Sala[fila-1][3] += "X| "; 
+                Sala[fila-1][3] = fila+columna+"X| "; 
+                cont++;
             }
         }
         if (columna.equalsIgnoreCase("E")) {
              if (Sala[fila-1][4].contains("X")) {
                 System.out.println("El lugar esta ocupado, mira bien");
+                System.out.println("Elija un asiento LIBRE!!!");
+                modificarSala();
             }else{
-                Sala[fila-1][4] += "X| "; 
+                Sala[fila-1][4] = fila+columna+"X| "; 
+                cont++;
             }
         }
         if (columna.equalsIgnoreCase("F")) {
              if (Sala[fila-1][5].contains("X")) {
                 System.out.println("El lugar esta ocupado, mira bien");
+                System.out.println("Elija un asiento LIBRE!!!");
+                modificarSala();
             }else{
-                Sala[fila-1][5] += "X| "; 
+                Sala[fila-1][5] = fila+columna+"X| "; 
+                cont++;
             }
         }
 
