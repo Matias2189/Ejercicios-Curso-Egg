@@ -29,6 +29,7 @@ cada asiento o solo las X y espacios vacíos.
 package ejercicio2extraguia9;
 
 import entidad.Espectador;
+import entidad.Pelicula;
 import java.util.ArrayList;
 import java.util.Scanner;
 import servicio.CineServicio;
@@ -36,11 +37,12 @@ import servicio.CineServicio;
 public class Ejercicio2ExtraGuia9 {
 
     public static void main(String[] args) {
+        
         ArrayList<Espectador> personas = new ArrayList();
         CineServicio s1 = new CineServicio();
         Espectador p = new Espectador();
         Scanner leer = new Scanner(System.in).useDelimiter("\n");
-        int cont=0;
+        int cont = 0;
         s1.abrirSala();
 
         int opcion;
@@ -57,16 +59,20 @@ public class Ejercicio2ExtraGuia9 {
 
             switch (opcion) {
                 case 1:
-                    System.out.println("Cuántas entradas quiere comprar?");
-                    int cantidad = leer.nextInt();
-                    int cantidadActual = personas.size() + cantidad;
-                    do {
-                        personas.add(s1.crearPersona(personas));
-                        s1.mostrarSala();
-                        System.out.println("Elegí donde te queres sentar chango!");
-                        s1.modificarSala();
-                    } while (personas.size() < cantidadActual);
-                    System.out.println(personas.toString());
+                    
+                        System.out.println("Cuántas entradas quiere comprar?");
+                        int cantidad = leer.nextInt();
+                        int cantidadActual = personas.size() + cantidad;
+                        do {
+                            personas.add(s1.crearPersona(personas));
+                            
+                            s1.mostrarSala();
+                            System.out.println("Elegí donde te queres sentar chango!");
+                            s1.modificarSala();
+                            
+                        } while (personas.size() < cantidadActual);
+                        System.out.println(personas.toString());
+                    
                     break;
                 case 2:
                     s1.mostrarSala();

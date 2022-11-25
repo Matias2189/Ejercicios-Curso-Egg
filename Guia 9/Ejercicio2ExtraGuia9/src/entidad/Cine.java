@@ -13,6 +13,7 @@ public class Cine {
     private ArrayList<Pelicula> peli;
 
     public Cine() {
+        precio=500;
     }
 
     public Cine(Integer precio, ArrayList<Espectador> personas, ArrayList<Pelicula> peli) {
