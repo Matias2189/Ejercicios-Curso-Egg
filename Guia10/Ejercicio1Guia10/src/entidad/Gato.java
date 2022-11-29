@@ -9,7 +9,7 @@ package entidad;
  *
  * @author MATIAS
  */
-public class Gato extends Animal{
+public final class Gato extends Animal{
 
     public Gato() {
     }
