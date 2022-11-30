@@ -10,7 +10,7 @@ package interfaz;
  * @author MATIAS
  */
 public interface CalculosFormas {
-    public double PI_CONSTANTE = Math.PI;
+    public final double PI_CONSTANTE = Math.PI;
     
     public void calcularArea();
     public void calcularPerimetro();

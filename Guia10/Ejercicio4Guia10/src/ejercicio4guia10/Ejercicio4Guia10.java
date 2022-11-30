@@ -11,12 +11,39 @@ resultado final.
  */
 package ejercicio4guia10;
 
+import entidad.Circulo;
+import entidad.Rectangulo;
+import java.util.Scanner;
+
 
 public class Ejercicio4Guia10 {
 
     
     public static void main(String[] args) {
         
+        Scanner leer = new Scanner(System.in).useDelimiter("\n");
+        Circulo cir = new Circulo();
+        Rectangulo rect = new Rectangulo();
+
+        System.out.println("Vamos a crear un circulo para luego calcular su area y su perimetro!");
+        System.out.println("Ingrese Radio del circulo: ");
+        cir.setRadio(leer.nextDouble());
+        
+        System.out.println("");
+        
+        System.out.println("Ahora vamos a crear un rectangulo:");
+        System.out.println("Ingrese base del rectangulo: ");
+        rect.setBase(leer.nextDouble());
+        
+        System.out.println("");
+        
+        System.out.println("Ingrese altura del rectangulo: ");
+        rect.setAltura(leer.nextDouble());
+        
+        cir.calcularArea();
+        cir.calcularPerimetro();
+        rect.calcularArea();
+        rect.calcularPerimetro();
     }
     
 }

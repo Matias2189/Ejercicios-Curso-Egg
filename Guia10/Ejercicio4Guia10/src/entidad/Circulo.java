@@ -23,6 +23,16 @@ public class Circulo implements CalculosFormas{
         this.radio = radio;
     }
 
+    public double getRadio() {
+        return radio;
+    }
+
+    public void setRadio(double radio) {
+        this.radio = radio;
+    }
+    
+    
+
     @Override
     public void calcularArea() {
         double area=PI_CONSTANTE * Math.pow(radio, 2);
