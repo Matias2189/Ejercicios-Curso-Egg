@@ -11,7 +11,7 @@ package entidad;
  */
 public final class YatesDeLujo extends BarcoMotor{
     
-    protected Integer camarotes;
+    private Integer camarotes;
 
     public YatesDeLujo() {
     }
@@ -28,6 +28,7 @@ public final class YatesDeLujo extends BarcoMotor{
     public void setCamarotes(Integer camarotes) {
         this.camarotes = camarotes;
     }
-    
+
+   
     
 }

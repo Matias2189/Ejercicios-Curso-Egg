@@ -9,8 +9,8 @@ package entidad;
  *
  * @author MATIAS
  */
-public class BarcoMotor extends Barco{
-    
+public class BarcoMotor extends Barco {
+
     protected Integer potenciaCV;
 
     public BarcoMotor() {
@@ -28,6 +28,7 @@ public class BarcoMotor extends Barco{
     public void setPotenciaCV(Integer potenciaCV) {
         this.potenciaCV = potenciaCV;
     }
-    
-    
+
+   
+
 }

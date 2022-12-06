@@ -11,7 +11,7 @@ package entidad;
  */
 public final class Velero extends Barco{
     
-    protected Integer NdeMastiels;
+    private Integer NdeMastiels;
 
     public Velero() {
     }
@@ -28,6 +28,6 @@ public final class Velero extends Barco{
     public void setNdeMastiels(Integer NdeMastiels) {
         this.NdeMastiels = NdeMastiels;
     }
-    
+
     
 }

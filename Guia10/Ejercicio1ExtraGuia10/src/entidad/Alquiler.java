@@ -5,6 +5,8 @@
  */
 package entidad;
 
+import entidad.Barco;
+
 /**
  *
  * @author MATIAS

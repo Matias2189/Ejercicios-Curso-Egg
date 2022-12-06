@@ -5,16 +5,12 @@
  */
 package entidad;
 
-/**
- *
- * @author MATIAS
- */
 public class Barco {
 
     protected String matricula;
     protected Integer eslora;
     protected Integer añoDeFanricacion;
-    
+
     public Barco() {
     }
 
@@ -48,4 +44,5 @@ public class Barco {
         this.añoDeFanricacion = añoDeFanricacion;
     }
 
+    
 }
